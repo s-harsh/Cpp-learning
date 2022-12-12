@@ -33,6 +33,17 @@ public:
         }
         return i == word1.size() and j == word2.size();
     }
+
+// 1688. Count of Matches in Tournament
+    //https://leetcode.com/problems/count-of-matches-in-tournament/description/
+    int numberOfMatches(int n) {
+        int ans=0;
+        while(n>1){
+            ans+=n/2;
+            n=(n+1)/2;
+        }
+        return ans;
+    }
 };
 
 int main(){
