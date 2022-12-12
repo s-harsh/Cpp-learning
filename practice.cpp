@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-// Problem - Check If Two String Arrays are Equivalent
+// Problem 1- Check If Two String Arrays are Equivalent
     // https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent/description/
     bool arrayStringsAreEqual(vector<string>& word1, vector<string>& word2) {
         string str1,str2="";
@@ -34,7 +34,7 @@ public:
         return i == word1.size() and j == word2.size();
     }
 
-// 1688. Count of Matches in Tournament
+// Problem 2-  1688. Count of Matches in Tournament
     //https://leetcode.com/problems/count-of-matches-in-tournament/description/
     int numberOfMatches(int n) {
         int ans=0;
@@ -43,6 +43,21 @@ public:
             n=(n+1)/2;
         }
         return ans;
+    }
+
+// Problem 3- 2500. Delete Greatest Value in Each Row
+    // https://leetcode.com/problems/delete-greatest-value-in-each-row/description/
+    int deleteGreatestValue(vector<vector<int>>& grid) {
+        int sum = 0;
+        for (auto& row : grid) sort(row.begin(), row.end());
+        // sort(grid[0].begin(),grid[0].end());
+        for (int j = 0; j < grid[0].size(); j++){
+            int n = 0;
+            for (int i = 0; i < grid.size(); i++)
+                n = max(n, grid[i][j]);
+            sum += n;
+        } 
+        return sum;
     }
 };
 
