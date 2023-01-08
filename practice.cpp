@@ -74,6 +74,16 @@ public:
         }
         return mp.size();
     }
+    int uniqueMorseRepresentations(vector<string>& words) {
+        vector<string>table={".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
+
+        unordered_map<string,int>mp;
+        for(auto w:words){
+            string code;
+            for(auto c:w)   code+=table[c-'a'];
+            mp[code]++;
+        }
+        return mp.size();
 };
 
 int main(){
