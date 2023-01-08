@@ -2,7 +2,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution{
 public:
 // Problem 1- Check If Two String Arrays are Equivalent
     // https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent/description/
@@ -95,6 +95,18 @@ public:
             depth=max(depth,open);
         }
         return depth;
+    }
+
+// Problem 6 - 2006. Count Number of paris with absoulte Difference K
+    // https://leetcode.com/problems/count-number-of-pairs-with-absolute-difference-k/description/
+    int countKDifference(vector<int>& nums, int k) {
+        int ans=0;
+        for(int i=0;i<nums.size();i++){
+            for(int j=i;j<nums.size();j++){
+                if(abs(nums[j]-nums[i])==k) ans++;
+            }
+        }
+        return ans;
     }
 };
 
