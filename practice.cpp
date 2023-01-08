@@ -84,6 +84,18 @@ public:
             mp[code]++;
         }
         return mp.size();
+
+// Problem 5 - 1614. Maximum Nesting Depth of the Parenthese
+    //https://leetcode.com/problems/maximum-nesting-depth-of-the-parentheses/description/
+    int maxDepth(string s) {
+        int depth=0,open=0;
+        for(auto c:s){
+            if(c=='(')  open++;
+            if(c==')')  open--;
+            depth=max(depth,open);
+        }
+        return depth;
+    }
 };
 
 int main(){
