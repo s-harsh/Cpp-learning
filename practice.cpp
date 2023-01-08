@@ -59,6 +59,21 @@ public:
         } 
         return sum;
     }
+// Problem 4 - 804. Unique Morse Cord Words
+    // https://leetcode.com/problems/unique-morse-code-words/description/
+    int uniqueMorseRepresentations(vector<string>& words) {
+        vector<string>table={".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
+
+        unordered_map<string,int>mp;
+        for(int i=0;i<words.size();i++){
+            string str;
+            for(int j=0;j<words[i].size();j++){
+                str+=table[words[i][j]-'a'];
+            }
+            mp[str]++;
+        }
+        return mp.size();
+    }
 };
 
 int main(){
