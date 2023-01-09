@@ -165,7 +165,18 @@ public:
         }
         return true;
     }
-    
+
+// Problem 10 - 2520. Count the Digits that Divide a Number
+    int countDigits(int num) {
+        int ans=0,n=num;
+        while(n){ 
+            int x=n%10;
+            if(num%x==0)   ans++;
+            n/=10;
+        }
+        return ans;
+    }
+
 }
 
 int main(){
