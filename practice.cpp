@@ -1,4 +1,3 @@
-#include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -93,6 +92,7 @@ public:
             mp[code]++;
         }
         return mp.size();
+    }
 
 // Problem 5 - 1614. Maximum Nesting Depth of the Parenthese
     //https://leetcode.com/problems/maximum-nesting-depth-of-the-parentheses/description/
@@ -144,6 +144,29 @@ public:
         }
         return preorder;
     }
+// Problem 9 - 2396. Strictly Palindromic Number
+    bool isPalindrome(string &s){
+        int i=0,j=s.size()-1;
+        while(i<j){
+            if(s[i]!=s[j])  return false;
+            i++,j++;
+        }
+        return true;
+    }
+    bool isStrictlyPalindromic(int n) {
+        for(int i=2;i<=n-2;i++){
+            string rep="";
+            int num=n;
+            while(num){
+                rep+=to_string(num%i);
+                num/=i;
+            }
+            if(! isPalindrome(rep)) return false;
+        }
+        return true;
+    }
+    
+}
 
 int main(){
     return 0;
